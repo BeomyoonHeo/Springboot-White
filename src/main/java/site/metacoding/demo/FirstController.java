@@ -27,10 +27,12 @@ public class FirstController {
 	public String postData() {
 		return "<h1>insert data</h1>";
 	}
+
 	@PutMapping("/first")
 	public String putData() {
 		return "<h1>put data</h1>";
 	}
+	
 	@DeleteMapping("/first")
 	public String deleteData() {
 		return "<h1>delete data</h1>";
