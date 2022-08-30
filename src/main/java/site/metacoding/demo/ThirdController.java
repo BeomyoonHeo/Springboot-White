@@ -1,12 +1,5 @@
 package site.metacoding.demo;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -43,14 +36,15 @@ public String postData(Third third) { // request dto
 
 // UPDATE third SET title = ?, content = ?, WHERE id =?
 // 프로토콜이라서 외워야 함 - body로 보내면 안되고 주소로 보내야 됨
+
 @PutMapping("/third/{id}")
 public String putData(@PathVariable Integer id, Third third) {
+	third.setId(id);
 	return third.toString();
 }
 
 @PutMapping("/third/{id}/json")
 public String putJsonData(@PathVariable Integer id, @RequestBody Third third) { // json형으로 데이터를 받을 수 있다.
-	third.setId(id);
 	return third.toString();
 }
 }

@@ -13,6 +13,9 @@ public class Third {
 	public Third() {
 		System.out.println("디폴트생성자 실행됨");
 	}
+	public Third(int id) {
+		setId(id);
+	}
 	public Integer getId() {
 
 		return id;
@@ -31,6 +34,7 @@ public class Third {
 	public String getContent() {
 		return content;
 	}
+	
 	public void setContent(String content) {
 		System.out.println("setContent 실행됨");
 		this.content = content;
